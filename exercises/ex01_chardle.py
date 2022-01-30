@@ -1,7 +1,7 @@
 """EX01 - Chardle - A cute step towards Wordle."""
 
 __author__ = "730484959"
-
+    
 user_inputed_word: str = input("Enter a 5-character word: ")
 if len(user_inputed_word) != 5:
     print("Error: Word must contain 5 characters")
@@ -31,7 +31,9 @@ if user_inputed_word[4] == user_inputed_character:
     print(user_inputed_character + " found at index 4")
     number_of_matching_characters = number_of_matching_characters + 1
 
-if number_of_matching_characters > 0:
+if number_of_matching_characters == 1:
+    print(str(number_of_matching_characters) + " instance of " + user_inputed_character + " found in " + user_inputed_word)
+if number_of_matching_characters > 1:
     print(str(number_of_matching_characters) + " instances of " + user_inputed_character + " found in " + user_inputed_word)
-else:
+if number_of_matching_characters == 0:
     print("No instances of " + user_inputed_character + " found in " + user_inputed_word)

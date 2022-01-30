@@ -7,7 +7,7 @@ guess: int = int(input("What is your guess? "))
 
 if guess == SECRET:
     print("You guessed correctly!!!")
-    print("Have a wonderful day!!!)")
+    print("Have a wonderful day!!!")
 else:
     print("Sorry, you guessed incorrectly :(")
     if guess > SECRET:
