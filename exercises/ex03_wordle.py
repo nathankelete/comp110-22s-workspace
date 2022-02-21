@@ -56,7 +56,7 @@ def main() -> None:
     turns: int = 1
     win: bool = False 
     while turns != 7 and win is False:
-        print(f"=== Turn {turns}/6")
+        print(f"=== Turn {turns}/6 ===")
         """Asks user for their guess"""
         user_inputed_word: str = input_guess(len(secret))
         print(emojified(user_inputed_word, secret))
