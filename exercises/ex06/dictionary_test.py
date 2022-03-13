@@ -2,7 +2,7 @@
 
 __author__ = "730484959"
 
-from exercises.ex06.dictionary import invert, favorite_color, count
+from dictionary import invert, favorite_color, count
 
 
 def test_invert_empty() -> None:
@@ -29,7 +29,7 @@ def test_favorite_color_empty() -> None:
     assert favorite_color(string_dictionary) == ""
 
 
-def test_favorite_color_two() -> None:
+def test_favorite_color_tie() -> None:
     """Two."""
     string_dictionary: dict[str, str] = {"Nathan": "purple", "Ahmad": "lavender"}
     assert favorite_color(string_dictionary) == "purple"

@@ -8,6 +8,8 @@ def invert(string_dictionary: dict[str, str]) -> dict[str, str]:
     new_dict: dict[str, str] = dict()
     for key in string_dictionary:
         new_dict[string_dictionary[key]] = key
+    if len(new_dict) != len(string_dictionary):
+        raise KeyError("KeyError!")
     return new_dict
 
 
@@ -23,12 +25,13 @@ def favorite_color(string_dictionary: dict[str, str]) -> str:
     for key in new_dict:
         value_list.append(new_dict[key])
     max_value = max(value_list)
-    store_list = []
+    store_list: list[str] = []
     for key in new_dict:
         if new_dict[key] == max_value:
             store_list.append(key)
     if len(store_list) > 1:
-        store_list = store_list[0]
+        store_list_1 = store_list[0]
+        return store_list_1
     return str(store_list[0])   
             
 
