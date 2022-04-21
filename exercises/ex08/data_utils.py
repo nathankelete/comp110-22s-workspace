@@ -38,7 +38,7 @@ def column_values(table: list[dict[str, str]], column: str) -> list[str]:
 
 def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
     """Transform a row-oriented table to a column-oriented table."""
-    result: dict[str, list[str]] = {}
+    result = {}
 
     first_row: dict[str, str] = row_table[0]
     for column in first_row:
@@ -64,7 +64,7 @@ def head(table: dict[str, list[str]], integer: int) -> dict[str, list[str]]:
 
 
 def select(table: dict[str, list[str]], column_names: list[str]) -> dict[str, list[str]]:
-    """Produces a new table with only a specific usbset of the original columns."""
+    """Produces a new table with only a specific subset of the original columns."""
     result: dict[str, list[str]] = {}
     i: int = 0 
     while i < len(column_names):
@@ -97,3 +97,29 @@ def count(list_of_values: list[str]) -> dict[str, int]:
             result[list_of_values[i]] = 1
         i += 1
     return result
+
+
+def less_than(col: list[str], value: int) -> list[bool]:
+    """Returns a table with the values less than the input value."""
+    result: list[bool] = []
+    for item in col:
+        result.append(int(item) < value)
+    return result
+
+
+def masked(col: list[str], mask: list[bool]) -> list[int]:
+    result: list[int] = []
+    for i in range(len(mask)):
+        if mask[i]:
+            result.append(int(col[i]))
+    return result
+
+
+def column_values_int(table: list[dict[str, str]], column: str) -> list[int]:
+    """Produce a list[str] of all values in a single column."""
+    result: list[int] = []
+    for row in table:
+        item: int = int(row[column])
+        result.append(item)
+    return result
+
